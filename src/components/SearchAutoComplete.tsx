@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { createUseStyles } from 'react-jss'
+import { createUseStyles } from 'react-jss';
 import { Item } from "../data";
-import useQuery from "../hooks/use-query"
+import useQuery from "../hooks/use-query";
 
 export function GroupBy<T, K extends keyof T>(array: T[], key: K) {
   let map = new Map<T[K], T[]>();
@@ -18,7 +18,7 @@ type SearchItemProps = {
   item: Item
 }
 
-function SearchItem ({item}: SearchItemProps) {
+function SearchItem({ item }: SearchItemProps) {
   const classes = useStyles();
   return (
     <div className={classes.searchResultItem}>
@@ -30,7 +30,7 @@ function SearchItem ({item}: SearchItemProps) {
   )
 };
 
-export default function EntitySearch() {
+function SearchAutoComplete() {
   const classes = useStyles();
   const [query, setQuery] = useState('');
   const { data, loading } = useQuery({ query: query })
@@ -97,3 +97,5 @@ const useStyles = createUseStyles({
     borderTop: 0,
   }
 })
+
+export default SearchAutoComplete;

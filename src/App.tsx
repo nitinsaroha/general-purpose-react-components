@@ -1,10 +1,10 @@
-import EntitySearch from './routes/EntitySearch';
+import SearchAutoComplete from './components/SearchAutoComplete';
 
 
 function App() {
   return (
     <>
-      <EntitySearch />
+      <SearchAutoComplete />
     </>
   );
 }
